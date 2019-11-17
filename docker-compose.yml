@@ -1,0 +1,12 @@
+version: "2"
+services:
+  go1:
+    image: golang:1.13.0-alpine3.10
+    command: echo "done go1"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+  go2:
+    image: golang:1.13.0-alpine3.10
+    command: echo "done go2"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
