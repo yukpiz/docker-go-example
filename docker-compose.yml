@@ -2,11 +2,13 @@ version: "2"
 services:
   go1:
     image: golang:1.13.0-alpine3.10
-    command: echo "done go1"
+    command: go run main.go
+    working_dir: /go1
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock
+      - ./go1:/go1
   go2:
     image: golang:1.13.0-alpine3.10
-    command: echo "done go2"
+    command: ./wait.sh
+    working_dir: /go2
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock
+      - ./go2:/go2
